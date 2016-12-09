@@ -36,4 +36,12 @@
 		<addUniqueConstraint tableName="concept_reference_source" columnNames="unique_id" constraintName="concept_reference_source_unique_id_unique"/>
 	</changeSet>
 
+	<changeSet id="TRUNK-4979-20161209-1400" author="bahmni" >
+		<preConditions onFail="MARK_RAN">
+			<not><columnExists tableName="form_resource" columnName="value_reference"/></not>
+		</preConditions>
+		<comment>Change dataType from text to mediumtext</comment>
+		<modifyDataType tableName="form_resource" columnName="value_reference" newDataType="mediumtext" />
+	</changeSet>
+
 </databaseChangeLog>
